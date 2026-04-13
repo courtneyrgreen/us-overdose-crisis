@@ -1,9 +1,9 @@
 ---
 format:
   dashboard:
-    engine: jupyter
     embed-resources: false
     scrolling: true
+jupyter: python3
 execute:
   enabled: true
 bibliography: references.bib
@@ -29,7 +29,7 @@ from branca.colormap import linear
 # Overview
 
 # Introduction
-## Row {height=12%}
+## Row {height="6%"}
 ### Column {width="100%", style="display: flex; justify-content: center;"}
 
 ::::: {.card collapse="false" style="width: 100%; padding: 0;"}
@@ -42,7 +42,7 @@ from branca.colormap import linear
 </div>
 :::
 
-::: {.card-body style="text-align: center;"}
+::: {.card-body style="text-align: center; padding-bottom: 0.6rem;"}
 <div style="max-width: 600px; margin: 0 auto;">
   <span style="font-size: 1rem;">Isak Dai · Courtney Green · Jen Guo · Sophia Rutman</span>
 </div>
@@ -50,7 +50,7 @@ from branca.colormap import linear
 
 :::::
 
-## Row {height=23%}
+## Row {height="13%"}
 
 ### Column (width=20%)
 
@@ -98,7 +98,7 @@ dict(icon="clock-history", value="12%", color="success")
 
 ```
 
-## Row {height=70%}
+## Row
 
 ### Column {width="50%"}
 
@@ -158,11 +158,8 @@ Let’s review our first research question, how have deaths due to drug overdose
 Drug Overdose Death Timeline
 :::
 
-::: card-body
-
-<embed src="outputs/smaller_addiction_lineplot.html" width="100%" height="550px" style="border:none;">
-
-</embed>
+::: {.card-body style="background: white;"}
+<iframe src="outputs/smaller_addiction_lineplot.html" scrolling="no" style="border:none; width:100%; height:430px;"></iframe>
 :::
 :::::
 
@@ -174,14 +171,16 @@ Drug Overdose Death Timeline
 Log Transformed Overdose Deaths State Level
 :::
 
-::: card-body
-<embed style="border: none;" src="outputs/us_overdose_map_state.html" width="100%" height="600px"></embed>
+::: {.card-body style="background: white; padding: 0;"}
+<iframe src="outputs/us_overdose_map_state.html" scrolling="no" style="border:none; width:100%; height:600px;"></iframe>
 :::
 :::::
 
 ### Column{width=30%}
 ::: {.callout-note appearance="minimal"}
-Let's take a preview of geographic distribution of drug overdose deaths across the US states. The choropleth map below provides the information of drug overdose deaths in the US on a state level. The total number of overdose deaths were calculated per capita then log transformed for normality.
+Let's take a preview of the geographic distribution of drug overdose deaths across the US states. The choropleth map below shows overdose deaths on a state level, calculated per capita and log transformed for normality.
+
+Darker shades indicate higher overdose death rates relative to population. States in the **Mid-Atlantic, Appalachian region, and parts of the West** tend to show elevated rates, reflecting the uneven geographic toll of the opioid crisis. Log transformation was applied to reduce the influence of extreme outliers and make state-to-state differences easier to compare visually.
 :::
 
 # Data
@@ -357,10 +356,11 @@ chart
 
 ::::: {.card collapse="true"}
 ::: card-header
-Racial Demograhics of Substance Use
+Demographics of Substance Use
 :::
-::: card-body
-<embed style="border:none;" src="outputs/race.html" dpi="300" width="100%" height="500px"></embed>
+::: {.card-body style="background: white; padding: 0; padding-top: 2.5rem;"}
+<iframe src="outputs/race.html" scrolling="no" style="border:none; width:100%; height:510px;"></iframe>
+<iframe src="outputs/gender_substance.html" scrolling="no" style="border:none; width:100%; height:490px;"></iframe>
 :::
 :::::
 
@@ -371,8 +371,8 @@ This bar chart shows the percentage breakdown of U.S. substance use treatment ad
 -   **Black or African American individuals show notably higher admission rates for cocaine-related substances** compared to other groups.
 -   **Hispanic or Latino populations account for a significant portion of admissions for marijuana and heroin treatment.**
 -   Other racial and ethnic groups, including Asian American, Native American, and multiracial individuals, represent a smaller but important proportion across categories.
-
-These patterns suggest how substance use and treatment disparities can vary significantly by race and ethnicity, highlighting the need for culturally specific prevention and intervention strategies.
+-   **Males account for the majority of admissions across all substances**, particularly alcohol, heroin, and cocaine.
+-   **The gender gap is narrowest for tranquilizers and amphetamines**, suggesting females are proportionally more affected by prescription drug misuse than by illicit drugs.
 :::
 
 ### Column {width=30%}
@@ -389,8 +389,8 @@ Economic variables also correlate with each other, as can be seen here in the st
 Relationship Between Educational Attainment, Income, and Addiction Deaths
 :::
 
-::: card-body
-<embed style="border:none;" src="outputs/scatterplot_density.html" dpi="300" width="100%" height="800px"></embed>
+::: {.card-body style="background: white;"}
+<iframe src="outputs/scatterplot_density.html" scrolling="no" style="border:none; width:100%; height:490px;"></iframe>
 :::
 :::::
 
@@ -406,7 +406,7 @@ It appears that income may be a more significant factor in determining addiction
 Demographic Variables vs. Addication Death Rates
 :::
 
-::: card-body
+::: {.card-body style="background: white;"}
 <embed style="border:none;" src="outputs/scatterplot.html" dpi="300" width="100%" height="600px"></embed>
 :::
 :::::
@@ -508,11 +508,21 @@ fig_map = px.choropleth(
     scope="usa",
     title="Click a State to See Substance Use vs High School as Highest Level of Education",
     labels={
-        "percent_of_adults_who_are_high_school_graduates_or_equivalent_2019-23": "Adults with<br>High School<br>as Highest Level<br>of Education"
+        "percent_of_adults_who_are_high_school_graduates_or_equivalent_2019-23": "HS Diploma<br>Only (%)"
     },
 )
 
-fig_map.write_html("website/img/education_choro.html")
+fig_map.update_layout(
+    coloraxis_colorbar=dict(
+        title=dict(text="HS Diploma<br>Only (%)", font=dict(size=12)),
+        thickness=15,
+        len=0.75,
+        x=1.02,
+    ),
+    margin=dict(l=0, r=90, t=40, b=0),
+)
+
+fig_map.write_html("img/education_choro.html")
 
 
 # Initialize Dash app
@@ -625,7 +635,7 @@ def update_state_plot(clickData, poverty_data=poverty_data):
     return fig, table_data, table_columns
 
 
-app.run(debug=True, port=8055)
+# app.run(debug=True, port=8055)  # disabled for static render
 ```
 
 ::::: {.card collapse="true"}
@@ -634,20 +644,24 @@ Education by State
 :::
 
 ::: card-body
-<iframe src="website/img/education_choro.html" width="100%" height="600px" style="border: none;"></iframe>
+<iframe src="img/education_choro.html" width="100%" height="600px" style="border: none;"></iframe>
 :::
 :::::
 
 ::: {.callout-note appearance="minimal"}
-Above, we present a choropleth that relates age to percentage of adults where their highest level of education is a high school diploma. States such as West Virginia and Ohio have extremely high percentages, while California and Ohio have low percentages.
+Above, we present a choropleth that relates the percentage of adults whose highest level of education is a high school diploma by state. States such as West Virginia and Arkansas have extremely high percentages, while Colorado and Massachusetts have low percentages.
 
-We wanted to further explore the connection between education, drug use, and age. To do so, we created the interactive plot linked below. To see the usage rates by age group for each state, click on the state you want to see. The states are covered by the percentage of adult high school graduates from 2019-2023.
+We wanted to further explore the connection between education, drug use, and age. Use the dropdown below to select any state and compare substance use rates across age groups.
 
-You will notice certain patterns as you click through states. **First of all, younger ages use drugs at higher rates.** The percentage is higher during early to mid twenties. These bar plots are shaped like a bell curve - percentages peak at a specific age range then slowly taper off. The peak depends on the state itself, but also has some correlation with education rates.
-
-**In states with a lower adult graduate rate, the bell curve is skewed further towards the left.** In other words: towards younger populations. With higher graduation rates, the curve is shifted further towards the right. Let us use Colorado and Ohio as case studies. Colorado has an extremely low percentage of adults with this education level, and Ohio a large percentage. We can see that the bell curve for Colorado is shifted all the way towards the left, and Ohio further right. This pattern could be due to a variety of reasons, such as drug use on college campuses or legislation. Further work is required to explore all of these options.
-
-The only two states without data are Oregon and Nevada.
-
-[Click on this link to explore](http://localhost:8055/)
+**Marijuana and amphetamine use tend to peak in younger age groups (21–35)**, while alcohol and opioid use persist more broadly across age groups. **States with lower high school graduation rates tend to show higher overall substance use**, particularly among younger adults. The only two states without data are Oregon and Nevada.
 :::
+
+::::: {.card collapse="true"}
+::: card-header
+Drug Use by Age Group by State
+:::
+
+::: {.card-body style="background: white; padding: 0;"}
+<iframe src="outputs/state_drug_age.html" scrolling="no" style="border:none; width:100%; height:520px;"></iframe>
+:::
+:::::

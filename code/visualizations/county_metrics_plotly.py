@@ -159,7 +159,8 @@ fig.update_layout(
             yanchor="top",
         )
     ],
-    margin=dict(r=0, t=40, l=0, b=40),
+    margin=dict(r=0, t=40, l=0, b=0),
+    height=450,
 )
 
 fig.write_html("../../outputs/plotly_county_metrics_map.html", include_plotlyjs="cdn")

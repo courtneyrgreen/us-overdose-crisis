@@ -61,11 +61,11 @@ fig = go.Figure(
         hoverinfo="text",
         featureidkey="id",
         colorscale=[
-            [0.0, "#ffcccc"],
-            [0.3, "#cf3e2a"],
-            [0.6, "#a31931"],
-            [0.85, "#8b0e4d"],
-            [1.0, "#610061"],
+            [0.0, "#eef0f8"],
+            [0.25, "#9ba8cc"],
+            [0.5, "#6b7db3"],
+            [0.75, "#3d4f8a"],
+            [1.0, "#1a2557"],
         ],
         colorbar=dict(
             title=dict(text="Logged<br>Overdose<br>Deaths", font=dict(size=12)),
@@ -81,9 +81,11 @@ fig.update_layout(
     title=dict(
         text="<b>Log Transformed Drug Overdose Deaths<br>Per Capita in the US from 2020 to 2024</b>",
         x=0.5,
-        y=0.95,
+        y=0.97,
         font=dict(size=18),
     ),
+    margin=dict(l=0, r=0, t=60, b=0),
+    height=550,
     geo=dict(
         scope="usa",
         projection=dict(type="albers usa"),
@@ -188,12 +190,13 @@ fig2 = go.Figure(
         hoverinfo="text",
         locationmode="USA-states",
         colorscale=[
-            [0.0, "#610061"],
+            [0.00, "#610061"],
             [0.15, "#8b0e4d"],
-            [0.4, "#a31931"],
-            [0.7, "#cf3e2a"],
-            [1.0, "#ff6e42"],
+            [0.40, "#a31931"],
+            [0.70, "#cf3e2a"],
+            [1.00, "#ff6e42"],
         ],
+        reversescale=True,
         colorbar=dict(
             title=dict(text="Log Drug<br>Overdose<br>Deaths", font=dict(size=12)),
             thickness=15,
@@ -207,9 +210,11 @@ fig2.update_layout(
     title=dict(
         text="<b>Log Transformed Drug Overdose Deaths<br>Per Capita in the US from 2020 to 2024<br>State Level</b>",
         x=0.5,
-        y=0.95,
+        y=0.97,
         font=dict(size=18),
     ),
+    margin=dict(l=0, r=0, t=70, b=0),
+    height=550,
     geo=dict(
         scope="usa",
         projection=dict(type="albers usa"),

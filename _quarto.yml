@@ -8,7 +8,7 @@ project:
 
 website:
   title: "Overdosed"
-  favicon: "img/gu-logo.png"
+  favicon: "img/favicon-32x32.png"
   navbar:
     search: true
     left:
@@ -21,8 +21,10 @@ website:
       - href: references.html
         text: References  
     right:
+      - text: "← Portfolio"
+        href: "https://courtneyrgreen.com/"
       - icon: github
-        href: "https://github.com/gu-dsan5200/dsan5200-spring2025-project-group-04.git"
+        href: "https://github.com/courtneyrgreen/us-overdose-crisis.git"
 
   
 format:
