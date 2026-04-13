@@ -256,7 +256,7 @@ Interactive Visualization: Overdose, Poverty, and Unemployment
 :::
 
 ::: {.card-body style="background: white; padding: 0;"}
-<iframe src="outputs/plotly_county_metrics_map.html" scrolling="no" style="border:none; width:100%; height:500px;"></iframe>
+<iframe src="outputs/plotly_county_metrics_map.html" scrolling="no" style="border:none; width:100%; height:580px;"></iframe>
 :::
 :::::
 
