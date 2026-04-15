@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Isak Dai, Courtney Green, Jen Guo, Sophia Rutman">
-<meta name="dcterms.date" content="2025-05-02">
 
-<title>Overdosed:   Mapping the U.S. Overdose Crisis Through County-Level Data and Demographic Indicators – Overdosed</title>
+<title>findings – Overdosed</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -4729,7 +4727,7 @@ vertical-align: -.125em;
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
@@ -4737,7 +4735,7 @@ vertical-align: -.125em;
 <span class="menu-text">Dashboard</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./findings.html"> 
+    <a class="nav-link active" href="./findings.html" aria-current="page"> 
 <span class="menu-text">Findings</span></a>
   </li>  
   <li class="nav-item">
@@ -4771,49 +4769,68 @@ vertical-align: -.125em;
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#about-the-project" id="toc-about-the-project" class="nav-link active" data-scroll-target="#about-the-project">About the Project</a></li>
+  <li><a href="#findings" id="toc-findings" class="nav-link active" data-scroll-target="#findings">Findings</a>
+  <ul>
+  <li><a href="#how-have-deaths-due-to-drug-overdose-persisted-throughout-time-in-the-us" id="toc-how-have-deaths-due-to-drug-overdose-persisted-throughout-time-in-the-us" class="nav-link" data-scroll-target="#how-have-deaths-due-to-drug-overdose-persisted-throughout-time-in-the-us"><em>How have deaths due to drug overdose persisted throughout time in the US?</em></a></li>
+  <li><a href="#what-do-these-counties-and-states-have-in-common-in-terms-of-socioeconomic-characteristics-which-socioeconomic-factors-correlate-with-high-and-low-addiction-rates" id="toc-what-do-these-counties-and-states-have-in-common-in-terms-of-socioeconomic-characteristics-which-socioeconomic-factors-correlate-with-high-and-low-addiction-rates" class="nav-link" data-scroll-target="#what-do-these-counties-and-states-have-in-common-in-terms-of-socioeconomic-characteristics-which-socioeconomic-factors-correlate-with-high-and-low-addiction-rates"><em>What do these counties and states have in common in terms of socioeconomic characteristics? Which socioeconomic factors correlate with high and low addiction rates?</em></a></li>
+  <li><a href="#how-do-age-race-and-ethnicity-influence-addiction-and-overdose-rates" id="toc-how-do-age-race-and-ethnicity-influence-addiction-and-overdose-rates" class="nav-link" data-scroll-target="#how-do-age-race-and-ethnicity-influence-addiction-and-overdose-rates"><em>How do age, race, and ethnicity influence addiction and overdose rates?</em></a></li>
+  <li><a href="#which-counties-and-states-suffer-from-the-highest-rates-of-addiction" id="toc-which-counties-and-states-suffer-from-the-highest-rates-of-addiction" class="nav-link" data-scroll-target="#which-counties-and-states-suffer-from-the-highest-rates-of-addiction"><em>Which counties and states suffer from the highest rates of addiction?</em></a></li>
+  <li><a href="#are-there-any-counties-that-are-outliers-in-terms-of-their-drug-overdose-death-rates-given-other-socioeconomic-factors" id="toc-are-there-any-counties-that-are-outliers-in-terms-of-their-drug-overdose-death-rates-given-other-socioeconomic-factors" class="nav-link" data-scroll-target="#are-there-any-counties-that-are-outliers-in-terms-of-their-drug-overdose-death-rates-given-other-socioeconomic-factors"><em>Are there any counties that are outliers in terms of their drug overdose death rates given other socioeconomic factors?</em></a></li>
+  </ul></li>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
+  <li><a href="#recommendations" id="toc-recommendations" class="nav-link" data-scroll-target="#recommendations">Recommendations</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Overdosed: <br> Mapping the U.S. Overdose Crisis Through County-Level Data and Demographic Indicators</h1>
-</div>
 
 
 
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Isak Dai, Courtney Green, Jen Guo, Sophia Rutman </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">May 2, 2025</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="about-the-project" class="level2">
-<h2 class="anchored" data-anchor-id="about-the-project">About the Project</h2>
-<p>This project was created for <strong>DSAN 5200: Advanced Data Visualization</strong> at Georgetown University. It applies exploratory data analysis and interactive visual storytelling techniques to investigate patterns in drug overdose deaths across the United States.</p>
-<p>Leveraging public datasets from sources such as the CDC, Census Bureau, and USDA Economic Research Service, the project explores how demographic and socioeconomic factors relate to overdose mortality at both the state and county levels. Visualizations are designed to help viewers understand geographic clustering, disparities in access to care, and how overdose trends intersect with income, education, race, and age.</p>
-<p>All visualizations were built using <code>Quarto</code>, <code>vegabrite</code>, <code>plotly</code>, <code>Altair</code>, and <code>folium</code>, and are embedded in an interactive dashboard that allows users to filter and explore trends across dimensions. This work is intended to demonstrate how data visualization can support public policy and public health research by making complex, multi-layered issues more understandable and actionable.</p>
+<section id="findings" class="level2">
+<h2 class="anchored" data-anchor-id="findings">Findings</h2>
+<section id="how-have-deaths-due-to-drug-overdose-persisted-throughout-time-in-the-us" class="level4">
+<h4 class="anchored" data-anchor-id="how-have-deaths-due-to-drug-overdose-persisted-throughout-time-in-the-us"><em>How have deaths due to drug overdose persisted throughout time in the US?</em></h4>
+<p>From our data, drug overdose death rates continued to increase throughout 2020 to 2023 across the US states. The overdose death rates due to drugs continued to rise rapidly as COVID continued to spread in the US. These deaths due to drug overdose have dropped slightly entering 2024, but these incidents are not likely to slow down without resources to aid people with drug addiction.</p>
+</section>
+<section id="what-do-these-counties-and-states-have-in-common-in-terms-of-socioeconomic-characteristics-which-socioeconomic-factors-correlate-with-high-and-low-addiction-rates" class="level4">
+<h4 class="anchored" data-anchor-id="what-do-these-counties-and-states-have-in-common-in-terms-of-socioeconomic-characteristics-which-socioeconomic-factors-correlate-with-high-and-low-addiction-rates"><em>What do these counties and states have in common in terms of socioeconomic characteristics? Which socioeconomic factors correlate with high and low addiction rates?</em></h4>
+<p>Education correlates with higher drug usage rates in younger groups of people (early to mid twenties). When education rates are higher, older people tend to use drugs more frequently than younger people.</p>
+</section>
+<section id="how-do-age-race-and-ethnicity-influence-addiction-and-overdose-rates" class="level4">
+<h4 class="anchored" data-anchor-id="how-do-age-race-and-ethnicity-influence-addiction-and-overdose-rates"><em>How do age, race, and ethnicity influence addiction and overdose rates?</em></h4>
+<p>We did not strive to find any sort of causal relationships between these factors and addiction/overdose rates. However, we did find correlations of importance.</p>
+<p>As relating to age, we found that those in their twenties have higher drug usage rates than older groups across all 50 states. We also found that factors such as education influence the percentage of those who use various drugs in each age group. When education rates are lower, the higher percentage tend to dominate younger groups, and older groups when the education rate is higher.</p>
+</section>
+<section id="which-counties-and-states-suffer-from-the-highest-rates-of-addiction" class="level4">
+<h4 class="anchored" data-anchor-id="which-counties-and-states-suffer-from-the-highest-rates-of-addiction"><em>Which counties and states suffer from the highest rates of addiction?</em></h4>
+<p>There are a few clusters of counties which have the highest rates of addiction. A group of rural counties devastated by the collapse of the coal industry in West Virginia and Kentucky have among the highest death rates (between 10 and 15 deaths per 10,000 people). The two counties with the highest addiction death rates are Menominee, Wisconsin and Mahnomen, Minnesota, which are two Midwestern counties roughly coterminous with Menominee and White Earth Indian Reservations, respectively. These counties saw close to 25 deaths per 10,000 people. Finally, there is a small cluster of cities like Baltimore, St. Louis, and Petersburg that have very elevated rates of overdose deaths.</p>
+<p>Based on exploring the correlations between the demographic variables and rates of addiction deaths, it appears that economic factors play a pivotal role. Counties that have higher median incomes and counties that have higher rates of college education both have lower rates of addiction deaths. However, it appears that income may be a confounding variable. Although education and income are highly correlated, the linked graph allows the user to explore the behavior of addiction deaths in areas of the country that differ from the norm. Some counties have very high rates of college education but lower median incomes, for instance Richmond City, Virginia or Orleans Parish in Louisiana. These areas have higher rates of addiction than you would expect given their education, but they have low median household incomes. Additionally, there is a large disparity in the distribution of unemployment rates between counties with 0 addiction deaths and counties that have at least 1 addiction deaths.</p>
+</section>
+<section id="are-there-any-counties-that-are-outliers-in-terms-of-their-drug-overdose-death-rates-given-other-socioeconomic-factors" class="level4">
+<h4 class="anchored" data-anchor-id="are-there-any-counties-that-are-outliers-in-terms-of-their-drug-overdose-death-rates-given-other-socioeconomic-factors"><em>Are there any counties that are outliers in terms of their drug overdose death rates given other socioeconomic factors?</em></h4>
+<p>Based on our data exploration and visualization, there are no US counties that are outliers for drug overdose death rates in terms of other socioeconomic factors.</p>
+</section>
+</section>
+<section id="conclusions" class="level2">
+<h2 class="anchored" data-anchor-id="conclusions">Conclusions</h2>
+<p>Our analysis confirms that the drug overdose crisis in the U.S. remains deeply entrenched and geographically uneven. Overdose death rates surged during the COVID-19 pandemic and have only slightly declined in more recent years. While addiction affects communities nationwide, it disproportionately impacts rural, economically disadvantaged, and Indigenous populations.</p>
+<p>Socioeconomic indicators like income, unemployment, and education show clear correlations with overdose death rates. Counties with lower income and education levels experience higher per capita overdose mortality. However, income appears to be a stronger predictor than education when both are considered together.</p>
+<p>We also found that age plays a key role in usage trends: younger adults in areas with lower educational attainment tend to report higher substance use, whereas in more educated regions, peak usage shifts toward older age groups. Racial disparities also appear, particularly in the concentration of overdose deaths in counties with large Indigenous populations and in historically underserved urban Black communities.</p>
+<p>There were no extreme statistical outliers, but regional clusters—like those in Appalachia and parts of the Midwest—signal the importance of place-based interventions.</p>
+</section>
+<section id="recommendations" class="level2">
+<h2 class="anchored" data-anchor-id="recommendations">Recommendations</h2>
+<p>Based on our findings, we recommend the following actions:</p>
+<ul>
+<li><p><strong>Invest in economic development</strong> in high-risk counties, particularly in Appalachia and Indigenous territories, to address root causes of vulnerability like unemployment and low income.</p></li>
+<li><p><strong>Expand harm reduction programs</strong> (e.g., needle exchange, naloxone distribution) in counties with consistently high overdose death rates.</p></li>
+<li><p><strong>Improve access to treatment</strong> by funding more rehab and mental health facilities in rural and economically disadvantaged areas.</p></li>
+<li><p><strong>Target age-specific prevention efforts</strong>. In low-education counties, focus on early intervention for young adults; in more educated counties, broaden outreach to middle-aged users.</p></li>
+<li><p><strong>Integrate addiction support with education and job training</strong> to reduce long-term risk, especially in areas with low college attainment.</p></li>
+<li><p><strong>Disaggregate data collection</strong> to better understand how overdose risks differ within racial/ethnic subgroups and tailor interventions accordingly.</p></li>
+</ul>
 
 
 </section>

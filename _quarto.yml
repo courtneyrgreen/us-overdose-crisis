@@ -21,7 +21,7 @@ website:
       - href: references.html
         text: References  
     right:
-      - text: "← Portfolio"
+      - text: "Back to Portfolio"
         href: "https://courtneyrgreen.com/"
       - icon: github
         href: "https://github.com/courtneyrgreen/us-overdose-crisis.git"
